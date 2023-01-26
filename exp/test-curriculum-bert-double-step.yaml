@@ -1,0 +1,26 @@
+exp: test-curriculum-bert-double-step
+mode: test__curriculum
+model: bert
+freeze_emb: false
+tasks:
+  -
+    name: cu-cluster-mlm
+    params:
+      weighted: false
+      curriculum_steps: 10
+      weight_decay: 1
+      cluster_json: clusters/cluster_vocab.json
+load:
+  load_ckpt: null
+  load_model_only: false
+  relax_load: false
+  super_load: true
+  ckpt_base_path: curriculum-bert-double-step-5
+  auto_load: true
+  epochs: null
+  wait_load: true
+policy:
+  pin_memory: false
+  batch_size: 32
+  device: gpu
+  n_metrics: [5, 10]

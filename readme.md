@@ -21,6 +21,14 @@ Please refer to [data/readme.md](https://github.com/Jyonn/FANS/blob/master/data/
 
 ```shell
 python worker.py 
-  --config config/zhihu-bert-double-n10.yaml 
+  --config config/<DATASET>-bert-double-n10.yaml 
   --exp exp/curriculum-bert-double-step.yaml
+```
+
+## Testing
+
+```shell
+python worker.py 
+  --config config/<DATASET>-bert-double-n10.yaml 
+  --exp exp/test-curriculum-bert-double-step.yaml
 ```
